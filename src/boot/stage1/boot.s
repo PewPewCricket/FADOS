@@ -290,7 +290,7 @@ disk_read:
     pop ax                              ; al = number of sectors to read
     
     mov ah, 02h                         ; move 02 in hex into ah
-    mov di, 3                           ; retry count = 3
+    mov di, 5                           ; retry count = 5
 
 .retry:
     pusha                               ; save all registers, we don't know what bios modifies
