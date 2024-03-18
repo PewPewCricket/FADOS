@@ -45,10 +45,6 @@ start:
 
 .after:                                 ; Get disk info and write it to FAT12 header
     mov [EBR_DN], dl                    ; BIOS should set DL to drive number
-
-    ; show OEM_ID
-    mov si, [BPB_OEM_ID]                ; move OEM Identifier into si
-    call print                          ; print OEM ID
     
     ; show loading message
     mov si, msg_loading                 ; move loading message into si
@@ -290,7 +286,7 @@ disk_read:
     pop ax                              ; al = number of sectors to read
     
     mov ah, 02h                         ; move 02 in hex into ah
-    mov di, 5                           ; retry count = 5
+    mov di, 3                           ; retry count = 5
 
 .retry:
     pusha                               ; save all registers, we don't know what bios modifies
