@@ -32,4 +32,4 @@ print:
     pop si                              ; restore si from stack
     ret                                 ; return from function
 
-find: db 'haiiiii :3', ENDL, 0
+find: db 'Hello Stage 2!', ENDL, 0
